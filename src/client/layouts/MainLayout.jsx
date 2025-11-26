@@ -1,6 +1,7 @@
 import React from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Outlet } from "react-router";
 
 export const MainLayout = () => {
 	return (
@@ -8,10 +9,10 @@ export const MainLayout = () => {
 			<div className="w-full sticky top-0 z-50 p-6">
 				<Header />
 			</div>
-			<main className="flex-grow w-full max-w-7xl mx-auto px-4 py-6">
-				{/* Main content will go here */}
-			</main>
-			<Footer />
+			<Outlet />
+			<div className="w-full">
+				<Footer />
+			</div>
 		</div>
 	);
 };
