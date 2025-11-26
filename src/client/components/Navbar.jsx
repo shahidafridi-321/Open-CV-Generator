@@ -15,7 +15,7 @@ export const Navbar = () => {
 						<a href="#">Contact</a>
 					</li>
 				</ul>
-				<button className="flex h-10 lg:h-12 bg-[#200e32] w-auto px-3.5 sm:px-5 lg:px-8 cursor-pointer touch-manipulation appearance-none items-center justify-center rounded-lg border-none text-sm lg:text-base font-bold text-white focus-visible:outline-blue-600 hover:opacity-80 lg:rounded-xl">
+				<button className="flex bg-blue-950 h-10 lg:h-12  w-auto px-3.5 sm:px-5 lg:px-8 cursor-pointer appearance-none items-center justify-center rounded-lg border-none text-sm lg:text-base font-bold text-white  hover:opacity-80 lg:rounded-xl ">
 					Start Now
 				</button>
 			</div>
