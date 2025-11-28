@@ -6,7 +6,7 @@ export const Navbar = () => {
 			<div className="flex space-x-4 items-center justify-end sm:justify-between p-6">
 				<ul className="hidden sm:flex space-x-8">
 					<li className=" text-gray-400 p-3 hover:opacity-90 text-[min(3vw,18px)]">
-						<a href="#">Home</a>
+						<a href="#">Templates</a>
 					</li>
 					<li className=" text-gray-400 p-3 hover:opacity-90 text-[min(3vw,18px)]">
 						<a href="#">About</a>
