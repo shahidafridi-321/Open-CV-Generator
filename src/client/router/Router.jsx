@@ -2,8 +2,10 @@ import { createBrowserRouter } from "react-router";
 import { MainLayout } from "../layouts/MainLayout";
 import { HomePage } from "../pages/HomePage";
 import { About } from "../pages/About";
-import { ResumePage } from "../pages/ResumePage";
+import { ResumesPage } from "../pages/ResumesPage";
 import { CoverLetter } from "../pages/CoverLetter";
+import { ResumePage } from "../pages/ResumePage";
+import { ResumeContentPage } from "../pages/ResumeContentPage";
 
 export const routes = createBrowserRouter([
 	{
@@ -24,11 +26,19 @@ export const routes = createBrowserRouter([
 			},
 			{
 				path: "/resumes",
-				element: <ResumePage />,
+				element: <ResumesPage />,
 			},
 			{
 				path: "/cover-letters",
 				element: <CoverLetter />,
+			},
+			{
+				path: "/resume",
+				element: <ResumePage />,
+			},
+			{
+				path: "/resume/content",
+				element: <ResumeContentPage />,
 			},
 		],
 	},
