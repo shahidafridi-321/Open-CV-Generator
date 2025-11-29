@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router";
 
 export const CoverLetter = () => {
 	return (
-		<main className="grid grid-cols-4 h-screen w-full">
+		<main className="grid grid-cols-4 h-[80vh] w-full">
 			{/* Sidebar */}
 			<div className="col-span-1 h-full hidden md:flex md:flex-col gap-6 rounded shadow bg-gray-100 p-4">
 				<nav className="w-full flex flex-col gap-2">
