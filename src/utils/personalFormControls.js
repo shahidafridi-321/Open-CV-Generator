@@ -35,7 +35,7 @@ export let personalFormControls = [{
   name: "location",
   label: "Location",
   placeholder: "City,Country",
-  type: "number",
+  type: "text",
   componentType:"input"
   }
 ]
