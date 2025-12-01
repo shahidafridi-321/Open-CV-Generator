@@ -1,4 +1,4 @@
-const defaultData = [
+export const defaultData = 
   {
     id: 1,
     personalDetails: {
@@ -92,4 +92,3 @@ const defaultData = [
     ]
 
   }
-]
