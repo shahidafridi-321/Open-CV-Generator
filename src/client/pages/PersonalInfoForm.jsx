@@ -4,6 +4,7 @@ export const PersonalInfoForm = ({
 	formData,
 	setFormData,
 	personalFormControls,
+	setFinalFormData,
 }) => {
 	const fileInputRef = useRef(null);
 
@@ -94,8 +95,19 @@ export const PersonalInfoForm = ({
 					<button
 						onClick={(e) => {
 							e.preventDefault();
-							console.log(formData);
+							setFinalFormData({ ...formData });
+							setFormData((prevData) => ({
+								...prevData,
+								personalInfo: {
+									fullName: "",
+									professionalTitle: "",
+									email: "",
+									phone: "",
+									location: "",
+								},
+							}));
 						}}
+						className="w-[50%] py-4 bg-green-400 hover:bg-green-500 rounded-xl text-violet-100 font-bold"
 					>
 						submit
 					</button>

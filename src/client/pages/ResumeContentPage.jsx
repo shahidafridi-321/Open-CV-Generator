@@ -26,6 +26,7 @@ const initialFormData = {
 
 export const ResumeContentPage = () => {
 	const [formData, setFormData] = useState(initialFormData);
+	const [finalFormData, setFinalFormData] = useState({});
 	const [selectedSections, setSelectedSections] = useState([
 		"Personal Information",
 	]);
@@ -58,6 +59,7 @@ export const ResumeContentPage = () => {
 												personalFormControls={personalFormControls}
 												formData={formData}
 												setFormData={setFormData}
+												setFinalFormData={setFinalFormData}
 											/>
 										)}
 									{opensection === "Education" &&
@@ -79,7 +81,7 @@ export const ResumeContentPage = () => {
 						<div className="flex flex-col py-4 px-6 gap-3">
 							<h1 className="text-4xl font-bold">Resume Content</h1>
 							{/* Form content goes here */}
-							{JSON.stringify(formData)}
+							{JSON.stringify(finalFormData)}
 						</div>
 					</div>
 				</>
@@ -102,8 +104,13 @@ export const ResumeContentPage = () => {
 								onClick={() => {
 									if (!selectedSections.includes(section)) {
 										setSelectedSections([...selectedSections, section]);
+										setFormData((prevData) => ({
+											...prevData,
+											[section.toLowerCase()]: [],
+										}));
 									}
 									setShowPopup(false);
+									console.log(formData);
 								}}
 							>
 								<h2 className="text-xl font-bold">{section}</h2>
