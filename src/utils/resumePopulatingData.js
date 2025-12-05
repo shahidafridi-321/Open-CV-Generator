@@ -19,7 +19,7 @@ export const defaultData =
     },
     profile: [
       {
-        professionalProfile: "i am a dev hah hghagd hjgaDNB AGD sjdh "
+        description: "i am a dev hah hghagd hjgaDNB AGD sjdh "
       }
     ],
     education: [
