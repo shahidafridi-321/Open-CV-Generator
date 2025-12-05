@@ -6,7 +6,7 @@ import { ResumesPage } from "../pages/ResumesPage";
 import { CoverLetter } from "../pages/CoverLetter";
 import { ResumePage } from "../pages/ResumePage";
 import { ResumeContentPage } from "../pages/ResumeContentPage";
-import { Practice } from "../pages/Practice";
+import { PersonalInfoForm } from "../pages/PersonalInfoForm";
 
 export const routes = createBrowserRouter([
 	{
@@ -40,10 +40,6 @@ export const routes = createBrowserRouter([
 			{
 				path: "/resume/content",
 				element: <ResumeContentPage />,
-			},
-			{
-				path: "/practice",
-				element: <Practice />,
 			},
 		],
 	},
