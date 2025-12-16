@@ -1,7 +1,7 @@
 import React from "react";
 import { Feacture } from "../components/home/Feacture";
 import { Testimonials } from "../components/home/Testimonials";
-import { Gallery } from "../router/Gallery";
+import { Gallery } from "../components/Gallery";
 import { Works } from "../components/home/Works";
 import { Hero } from "../components/home/Hero";
 import { Reviews } from "../components/home/Reviews";
