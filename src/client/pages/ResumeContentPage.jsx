@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { PersonalInfoForm } from "../forms/PersonalInfoForm";
 import { CVContext } from "../context/CVContextProvider";
+import { FormControls } from "../forms/FormControls";
+import { educationFormControls, profileFormControls } from "../../config";
 
 const sections = [
 	"Profile",
@@ -47,7 +49,19 @@ export const ResumeContentPage = () => {
 											<PersonalInfoForm />
 										)}
 									{opensection === "Education" &&
-										selectedSection === "Education" && <p>education form</p>}
+										selectedSection === "Education" && (
+											<FormControls
+												formControls={educationFormControls}
+												sectionName={selectedSection.toLowerCase()}
+											/>
+										)}
+									{opensection === "Profile" &&
+										selectedSection === "Profile" && (
+											<FormControls
+												formControls={profileFormControls}
+												sectionName={selectedSection.toLowerCase()}
+											/>
+										)}
 								</div>
 							))}
 						</div>
