@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { PersonalInfoForm } from "./PersonalInfoForm";
-import { personalFormControls } from "../../utils/personalFormControls";
+import React, { useContext, useState } from "react";
+import { PersonalInfoForm } from "../forms/PersonalInfoForm";
+import { CVContext } from "../context/CVContextProvider";
 
 const sections = [
 	"Profile",
@@ -13,20 +13,9 @@ const sections = [
 	"References",
 ];
 
-const initialFormData = {
-	personalInfo: {
-		profilePhoto: "",
-		fullName: "",
-		professionalTitle: "",
-		email: "",
-		phone: "",
-		location: "",
-	},
-};
-
 export const ResumeContentPage = () => {
-	const [formData, setFormData] = useState(initialFormData);
-	const [finalFormData, setFinalFormData] = useState({});
+	const { finalFormData, setFinalFormData } = useContext(CVContext);
+
 	const [selectedSections, setSelectedSections] = useState([
 		"Personal Information",
 	]);
@@ -55,12 +44,7 @@ export const ResumeContentPage = () => {
 									</button>
 									{opensection === "Personal Information" &&
 										selectedSection === "Personal Information" && (
-											<PersonalInfoForm
-												personalFormControls={personalFormControls}
-												formData={formData}
-												setFormData={setFormData}
-												setFinalFormData={setFinalFormData}
-											/>
+											<PersonalInfoForm />
 										)}
 									{opensection === "Education" &&
 										selectedSection === "Education" && <p>education form</p>}
@@ -104,13 +88,12 @@ export const ResumeContentPage = () => {
 								onClick={() => {
 									if (!selectedSections.includes(section)) {
 										setSelectedSections([...selectedSections, section]);
-										setFormData((prevData) => ({
+										setFinalFormData((prevData) => ({
 											...prevData,
 											[section.toLowerCase()]: [],
 										}));
 									}
 									setShowPopup(false);
-									console.log(formData);
 								}}
 							>
 								<h2 className="text-xl font-bold">{section}</h2>
