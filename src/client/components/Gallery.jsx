@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageCruser } from "../components/home/ImageCruser";
+import { ImageCruser } from "./home/ImageCruser";
 
 export const Gallery = () => {
 	return (
