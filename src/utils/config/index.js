@@ -179,3 +179,34 @@ export const languagesFormControls = [
 		options: ["Basic", "Conversetional", "Proficient", "Fluent", "Native"],
 	},
 ];
+
+export const awardsFormControls = [
+	{
+		name: "award",
+		label: "Award",
+		placeholder: "Enter Award",
+		componentType: "input",
+		type: "input",
+	},
+	{
+		name: "issuer",
+		label: "Issuer",
+		placeholder: "Enter Issuer",
+		componentType: "input",
+		type: "input",
+	},
+	{
+		name: "date",
+		label: "Date",
+		placeholder: "Enter Date",
+		componentType: "input",
+		type: "date",
+	},
+	{
+		name: "description",
+		label: "Description",
+		placeholder: "Describe your award...",
+		componentType: "textarea",
+		type: "text",
+	},
+];
