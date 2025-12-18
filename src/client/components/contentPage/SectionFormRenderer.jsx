@@ -29,7 +29,10 @@ const EditAndDelete = ({ entry, setFormData, sectionName }) => {
 		});
 	};
 	return (
-		<div className="w-full justify-between mt-4 flex gap-2 flex-wrap">
+		<div
+			className="w-full justify-between mt-4 flex gap-2 flex-wrap"
+			key={entry.id}
+		>
 			<button
 				onClick={() => setFormData(entry)}
 				className="px-4 py-2 bg-gray-300 rounded"
