@@ -3,6 +3,7 @@ import { PersonalInfoForm } from "../forms/PersonalInfoForm";
 import { CVContext } from "../context/CVContextProvider";
 import { FormEngine } from "../forms/FormEngine";
 import {
+	awardsFormControls,
 	educationFormControls,
 	languagesFormControls,
 	professionalExperieceFormControls,
@@ -86,6 +87,12 @@ export const ResumeContentPage = () => {
 												sectionName={selectedSection.toLowerCase()}
 											/>
 										)}
+									{opensection === "Awards" && selectedSection === "Awards" && (
+										<FormEngine
+											formControls={awardsFormControls}
+											sectionName={selectedSection.toLowerCase()}
+										/>
+									)}
 								</div>
 							))}
 						</div>
