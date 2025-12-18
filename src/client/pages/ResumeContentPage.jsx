@@ -2,21 +2,15 @@ import React, { useContext, useState } from "react";
 import { PersonalInfoForm } from "../forms/PersonalInfoForm";
 import { CVContext } from "../context/CVContextProvider";
 import { FormEngine } from "../forms/FormEngine";
-import { educationFormControls, profileFormControls } from "../../config";
-
-const sections = [
-	"Profile",
-	"Education",
-	"Professional Experience",
-	"Skills",
-	"Projects",
-	"Languages",
-	"Awards",
-	"References",
-];
+import {
+	educationFormControls,
+	professionalExperieceFormControls,
+	profileFormControls,
+} from "../../config";
+import { PopUp } from "../components/contentPage/PopUp";
 
 export const ResumeContentPage = () => {
-	const { finalFormData, setFinalFormData } = useContext(CVContext);
+	const { finalFormData } = useContext(CVContext);
 
 	const [selectedSections, setSelectedSections] = useState([
 		"Personal Information",
@@ -25,7 +19,7 @@ export const ResumeContentPage = () => {
 	const [opensection, setOpensection] = useState(null);
 
 	return (
-		<main className="w-full p-4 grid grid-cols-5">
+		<main className="w-full min-h-screen p-4 grid grid-cols-5">
 			{/* Sidebar */}
 			{!showPopup ? (
 				<>
@@ -34,7 +28,7 @@ export const ResumeContentPage = () => {
 							{selectedSections.map((selectedSection, index) => (
 								<div className="w-full self-stretch" key={index}>
 									<button
-										className="py-3 px-16 rounded font-bold bg-gray-300"
+										className="w-full py-3 px-16 rounded font-bold bg-gray-300"
 										onClick={() =>
 											setOpensection(
 												opensection === selectedSection ? null : selectedSection
@@ -62,6 +56,13 @@ export const ResumeContentPage = () => {
 												sectionName={selectedSection.toLowerCase()}
 											/>
 										)}
+									{opensection === "Professional Experience" &&
+										selectedSection === "Professional Experience" && (
+											<FormEngine
+												formControls={professionalExperieceFormControls}
+												sectionName={selectedSection.toLowerCase()}
+											/>
+										)}
 								</div>
 							))}
 						</div>
@@ -83,43 +84,7 @@ export const ResumeContentPage = () => {
 						</div>
 					</div>
 				</>
-			) : (
-				<div className="w-full bg-gray-200  rounded-xl flex  flex-col gap-3 col-span-5 shadow-2xl p-10 ">
-					<div className="w-full flex flex-col space-y-3 md:flex-row justify-between md:items-center px-6 py-4">
-						<h2 className="text-4xl font-bold">Add Section</h2>
-						<button
-							className="bg-pink-500 hover:bg-pink-600 w-40 py-2 px-6 rounded text-gray-100 font-bold transition-all"
-							onClick={() => setShowPopup(false)}
-						>
-							Close
-						</button>
-					</div>
-					<div className="flex flex-wrap items-center gap-5">
-						{sections.map((section) => (
-							<div
-								key={section}
-								className="max-w-[350px] rounded-xl shadow px-6 py-4 bg-gray-100"
-								onClick={() => {
-									if (!selectedSections.includes(section)) {
-										setSelectedSections([...selectedSections, section]);
-										setFinalFormData((prevData) => ({
-											...prevData,
-											[section.toLowerCase()]: [],
-										}));
-									}
-									setShowPopup(false);
-								}}
-							>
-								<h2 className="text-xl font-bold">{section}</h2>
-								<p className="text-[16px] text-gray-400">
-									Make a great first impression by presenting yourself in a few
-									sentences.
-								</p>
-							</div>
-						))}
-					</div>
-				</div>
-			)}
+			) : null}
 		</main>
 	);
 };
