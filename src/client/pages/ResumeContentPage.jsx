@@ -6,7 +6,8 @@ import {
 	educationFormControls,
 	professionalExperieceFormControls,
 	profileFormControls,
-} from "../../config";
+	skillsFormControls,
+} from "../../utils/config";
 import { PopUp } from "../components/contentPage/PopUp";
 
 export const ResumeContentPage = () => {
@@ -63,6 +64,12 @@ export const ResumeContentPage = () => {
 												sectionName={selectedSection.toLowerCase()}
 											/>
 										)}
+									{opensection === "Skills" && selectedSection === "Skills" && (
+										<FormEngine
+											formControls={skillsFormControls}
+											sectionName={selectedSection.toLowerCase()}
+										/>
+									)}
 								</div>
 							))}
 						</div>
