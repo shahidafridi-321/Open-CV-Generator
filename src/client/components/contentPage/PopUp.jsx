@@ -1,15 +1,6 @@
 import React, { useContext } from "react";
 import { CVContext } from "../../context/CVContextProvider";
-const sections = [
-	"Profile",
-	"Education",
-	"Professional Experience",
-	"Skills",
-	"Projects",
-	"Languages",
-	"Awards",
-	"References",
-];
+import { sections } from "../../../utils/config";
 
 export const PopUp = ({
 	selectedSections,
@@ -29,22 +20,25 @@ export const PopUp = ({
 				</button>
 			</div>
 			<div className="flex flex-wrap items-center gap-5">
-				{sections.map((section) => (
+				{sections.map((section, index) => (
 					<div
-						key={section}
+						key={index}
 						className="max-w-[350px] rounded-xl shadow px-6 py-4 bg-gray-100"
 						onClick={() => {
-							if (!selectedSections.includes(section)) {
+							const exists = selectedSections.some(
+								(s) => s.key === section.key
+							);
+							if (!exists) {
 								setSelectedSections([...selectedSections, section]);
 								setFinalFormData((prevData) => ({
 									...prevData,
-									[section.toLowerCase()]: [],
+									[section.key]: [],
 								}));
 							}
 							setShowPopup(false);
 						}}
 					>
-						<h2 className="text-xl font-bold">{section}</h2>
+						<h2 className="text-xl font-bold">{section.label}</h2>
 						<p className="text-[16px] text-gray-400">
 							Make a great first impression by presenting yourself in a few
 							sentences.
