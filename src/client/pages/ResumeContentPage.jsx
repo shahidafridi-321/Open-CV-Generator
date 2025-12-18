@@ -84,7 +84,13 @@ export const ResumeContentPage = () => {
 						</div>
 					</div>
 				</>
-			) : null}
+			) : (
+				<PopUp
+					setShowPopup={setShowPopup}
+					selectedSections={selectedSections}
+					setSelectedSections={setSelectedSections}
+				/>
+			)}
 		</main>
 	);
 };
