@@ -41,7 +41,7 @@ export const educationFormControls = [
 	{
 		name: "description",
 		label: "Description",
-		placeholder: "Enter Description",
+		placeholder: "Add a description of your education entry...",
 		componentType: "textarea",
 		type: "text",
 	},
@@ -152,5 +152,30 @@ export const projectsFormControls = [
 		placeholder: "Describe the project and its outcomes.",
 		componentType: "textarea",
 		type: "text",
+	},
+];
+
+export const languagesFormControls = [
+	{
+		name: "language",
+		label: "Language",
+		placeholder: "Enter language",
+		componentType: "input",
+		type: "input",
+	},
+	{
+		name: "additionalInformation",
+		label: "Additional information",
+		placeholder: "e.g. CO2, 4+, TOEFL, IELTS.",
+		componentType: "textarea",
+		type: "text",
+	},
+	{
+		name: "languageLevel",
+		label: "Language Level",
+		placeholder: "Select language level",
+		componentType: "select",
+		type: "text",
+		options: ["Basic", "Conversetional", "Proficient", "Fluent", "Native"],
 	},
 ];
