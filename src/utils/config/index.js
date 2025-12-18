@@ -91,3 +91,28 @@ export const professionalExperieceFormControls = [
 		type: "text",
 	},
 ];
+
+export const skillsFormControls = [
+	{
+		name: "skill",
+		label: "Skill",
+		placeholder: "Enter Skill",
+		componentType: "input",
+		type: "text",
+	},
+	{
+		name: "information",
+		label: "Information / Sub - skills",
+		placeholder: "Enter information or a sub-skill",
+		componentType: "input",
+		type: "text",
+	},
+	{
+		name: "skillLevel",
+		label: "Skill Level",
+		placeholder: "Select skill level",
+		componentType: "select",
+		type: "text",
+		options: ["Beginner", "Amatuer", "Competent", "Proficient", "Expert"],
+	},
+];
