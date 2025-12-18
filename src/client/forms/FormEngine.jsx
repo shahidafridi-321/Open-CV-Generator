@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { CVContext } from "../context/CVContextProvider";
 
-export const FormControls = ({ formControls, sectionName }) => {
+export const FormEngine = ({ formControls, sectionName }) => {
 	const { setFinalFormData } = useContext(CVContext);
 	const [formData, setFormData] = useState({});
 

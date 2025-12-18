@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { PersonalInfoForm } from "../forms/PersonalInfoForm";
 import { CVContext } from "../context/CVContextProvider";
-import { FormControls } from "../forms/FormControls";
+import { FormEngine } from "../forms/FormEngine";
 import { educationFormControls, profileFormControls } from "../../config";
 
 const sections = [
@@ -50,14 +50,14 @@ export const ResumeContentPage = () => {
 										)}
 									{opensection === "Education" &&
 										selectedSection === "Education" && (
-											<FormControls
+											<FormEngine
 												formControls={educationFormControls}
 												sectionName={selectedSection.toLowerCase()}
 											/>
 										)}
 									{opensection === "Profile" &&
 										selectedSection === "Profile" && (
-											<FormControls
+											<FormEngine
 												formControls={profileFormControls}
 												sectionName={selectedSection.toLowerCase()}
 											/>
