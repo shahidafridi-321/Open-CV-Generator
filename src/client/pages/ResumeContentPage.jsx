@@ -4,6 +4,7 @@ import { CVContext } from "../context/CVContextProvider";
 import { FormEngine } from "../forms/FormEngine";
 import {
 	educationFormControls,
+	languagesFormControls,
 	professionalExperieceFormControls,
 	profileFormControls,
 	projectsFormControls,
@@ -75,6 +76,13 @@ export const ResumeContentPage = () => {
 										selectedSection === "Projects" && (
 											<FormEngine
 												formControls={projectsFormControls}
+												sectionName={selectedSection.toLowerCase()}
+											/>
+										)}
+									{opensection === "Languages" &&
+										selectedSection === "Languages" && (
+											<FormEngine
+												formControls={languagesFormControls}
 												sectionName={selectedSection.toLowerCase()}
 											/>
 										)}
