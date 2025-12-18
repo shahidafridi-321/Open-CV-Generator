@@ -56,6 +56,39 @@ export const FormEngine = ({ formControls, sectionName }) => {
 						/>
 					</div>
 				);
+			case "select":
+				return (
+					<div className="w-full flex flex-col gap-1 ">
+						<label
+							htmlFor={field.name}
+							className="text-sm font-semibold text-gray-800"
+						>
+							{field.label}
+						</label>
+						<select
+							name={field.name}
+							id={field.name}
+							value={formData[field.name] || ""}
+							className="w-full bg-gray-100 text-gray-700 rounded-lg outline-none px-4 py-3 shadow-sm border border-gray-200 focus:ring-2 focus:ring-blue-500"
+							onChange={(e) => {
+								setFormData((prevData) => ({
+									...prevData,
+									[field.name]: e.target.value,
+								}));
+							}}
+						>
+							<option value="" disabled>
+								{field.placeholder}
+							</option>
+
+							{field.options.map((option, index) => (
+								<option value={option} key={index}>
+									{option}
+								</option>
+							))}
+						</select>
+					</div>
+				);
 		}
 	};
 
