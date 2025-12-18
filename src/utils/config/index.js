@@ -248,3 +248,14 @@ export const referenciesFormControls = [
 		componentType: "input",
 	},
 ];
+
+export const sections = [
+	{ key: "profile", label: "Profile" },
+	{ key: "education", label: "Education" },
+	{ key: "professionalExperience", label: "Professional Experience" },
+	{ key: "skills", label: "Skills" },
+	{ key: "projects", label: "Projects" },
+	{ key: "languages", label: "Languages" },
+	{ key: "awards", label: "Awards" },
+	{ key: "references", label: "References" },
+];
