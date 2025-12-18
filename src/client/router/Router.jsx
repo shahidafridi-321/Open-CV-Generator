@@ -7,6 +7,7 @@ import { CoverLetter } from "../pages/CoverLetter";
 import { ResumePage } from "../pages/ResumePage";
 import { ResumeContentPage } from "../pages/ResumeContentPage";
 import { CVContextProvider } from "../context/CVContextProvider";
+import { FormDataContextProvider } from "../context/FormDataContextProvider";
 
 export const routes = createBrowserRouter([
 	{
@@ -39,8 +40,16 @@ export const routes = createBrowserRouter([
 			},
 			{
 				path: "/resume/content",
-				element: <CVContextProvider>{<ResumeContentPage />}</CVContextProvider>,
+				element: (
+					<CVContextProvider>
+						<FormDataContextProvider>
+							<ResumeContentPage />;
+						</FormDataContextProvider>
+					</CVContextProvider>
+				),
 			},
 		],
 	},
 ]);
+{
+}
