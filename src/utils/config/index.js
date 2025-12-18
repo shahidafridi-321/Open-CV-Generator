@@ -210,3 +210,41 @@ export const awardsFormControls = [
 		type: "text",
 	},
 ];
+
+export const referenciesFormControls = [
+	{
+		name: "name",
+		label: "Name",
+		placeholder: "Enter The Full Name",
+		type: "text",
+		componentType: "input",
+	},
+	{
+		name: "jobTitle",
+		label: "Job Title",
+		placeholder: "Enter Job Title",
+		componentType: "input",
+		type: "input",
+	},
+	{
+		name: "organization",
+		label: "Organization",
+		placeholder: "Enter Organization",
+		componentType: "input",
+		type: "input",
+	},
+	{
+		name: "email",
+		label: "Email",
+		placeholder: "Enter email",
+		type: "email",
+		componentType: "input",
+	},
+	{
+		name: "phone",
+		label: "Phone",
+		placeholder: "Enter phone",
+		type: "number",
+		componentType: "input",
+	},
+];
