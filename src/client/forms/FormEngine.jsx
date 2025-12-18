@@ -1,11 +1,15 @@
 import React, { useContext, useState } from "react";
 import { CVContext } from "../context/CVContextProvider";
 
-export const FormEngine = ({ formControls, sectionName }) => {
-	const { setFinalFormData } = useContext(CVContext);
-	const [formData, setFormData] = useState({});
+export const FormEngine = ({
+	formControls,
+	sectionName,
+	formData,
+	setFormData,
+}) => {
+	const { finalFormData, setFinalFormData } = useContext(CVContext);
 
-	const handleInputField = (field, index) => {
+	const handleInputField = (field) => {
 		switch (field.componentType) {
 			case "textarea":
 				return (
@@ -92,30 +96,47 @@ export const FormEngine = ({ formControls, sectionName }) => {
 		}
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setFinalFormData((prevData) => {
+			const sectionData = finalFormData[sectionName] || [];
+			if (formData.id) {
+				return {
+					...prevData,
+					[sectionName]: sectionData.map((item) =>
+						item.id === formData.id ? formData : item
+					),
+				};
+			}
+			return {
+				...prevData,
+				[sectionName]: [
+					...sectionData,
+					{ ...formData, id: crypto.randomUUID() },
+				],
+			};
+		});
+
+		setFormData({});
+	};
+
 	return (
 		<div className="w-full flex items-start justify-center py-10">
 			<div className="w-full bg-white rounded-xl p-8 space-y-6">
-				<form className="w-full flex flex-col gap-6 justify-center items-center">
-					{formControls.map((controlItem, index) => (
+				<form
+					className="w-full flex flex-col gap-6 justify-center items-center"
+					onSubmit={handleSubmit}
+				>
+					{formControls.map((field) => (
 						<div
-							key={index}
+							key={field.name}
 							className="w-full flex flex-col gap-2 justify-center"
 						>
-							<div>{handleInputField(controlItem, index)}</div>
+							<div>{handleInputField(field)}</div>
 						</div>
 					))}
-					<button
-						onClick={(e) => {
-							e.preventDefault();
-							setFinalFormData((prevData) => ({
-								...prevData,
-								[sectionName]: [...prevData[sectionName], { ...formData }],
-							}));
-							setFormData({});
-						}}
-						className="w-[50%] py-4 bg-green-400 hover:bg-green-500 rounded-xl text-violet-100 font-bold"
-					>
-						submit
+					<button className="w-1/2 py-4 bg-green-500 rounded-xl text-white font-bold">
+						{formData.id ? "Update" : "Add"}
 					</button>
 				</form>
 			</div>
