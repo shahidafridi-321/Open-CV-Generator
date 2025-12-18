@@ -46,8 +46,48 @@ export const educationFormControls = [
 		type: "text",
 	},
 ];
-export const initialProfileFormData = [
+
+export const professionalExperieceFormControls = [
 	{
-		summary: "",
+		name: "jobTitle",
+		label: "Job Title",
+		placeholder: "Enter Job Title",
+		componentType: "input",
+		type: "input",
+	},
+	{
+		name: "employer",
+		label: "Employer",
+		placeholder: "Enter employer",
+		componentType: "input",
+		type: "input",
+	},
+	{
+		name: "startYear",
+		label: "Start Year",
+		placeholder: "Enter Start Year",
+		componentType: "input",
+		type: "date",
+	},
+	{
+		name: "endYear",
+		label: "End Year",
+		placeholder: "Enter End Year",
+		componentType: "input",
+		type: "date",
+	},
+	{
+		name: "location",
+		label: "Location",
+		placeholder: "City,Country",
+		type: "text",
+		componentType: "input",
+	},
+	{
+		name: "description",
+		label: "Description",
+		placeholder: "Describe your role & achievements",
+		componentType: "textarea",
+		type: "text",
 	},
 ];
