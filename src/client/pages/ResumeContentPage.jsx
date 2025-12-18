@@ -8,7 +8,7 @@ export const ResumeContentPage = () => {
 	const { finalFormData } = useContext(CVContext);
 
 	const [selectedSections, setSelectedSections] = useState([
-		"Personal Information",
+		{ key: "personalInformation", label: "Personal Information" },
 	]);
 	const [showPopup, setShowPopup] = useState(false);
 	const [opensection, setOpensection] = useState(null);
@@ -20,22 +20,24 @@ export const ResumeContentPage = () => {
 				<>
 					<div className="col-span-5 md:col-span-2 h-full md:flex md:flex-col gap-6 rounded shadow bg-gray-100 p-4">
 						<div className="w-full flex flex-col gap-2">
-							{selectedSections.map((selectedSection, index) => (
-								<div className="w-full self-stretch" key={index}>
+							{selectedSections.map((selectedSection) => (
+								<div className="w-full self-stretch" key={selectedSection.key}>
 									<button
 										className="w-full py-3 px-16 rounded font-bold bg-gray-300"
 										onClick={() =>
 											setOpensection(
-												opensection === selectedSection ? null : selectedSection
+												opensection === selectedSection.key
+													? null
+													: selectedSection.key
 											)
 										}
 									>
-										{opensection === selectedSection ? "Hide" : "Edit"}{" "}
-										{selectedSection}
+										{opensection === selectedSection.key ? "Hide" : "Edit"}{" "}
+										{selectedSection.label}
 									</button>
 
 									<SectionFormRenderer
-										selectedSection={selectedSection}
+										selectedSection={selectedSection.key}
 										opensection={opensection}
 									/>
 								</div>
