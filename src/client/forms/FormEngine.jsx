@@ -1,13 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { CVContext } from "../context/CVContextProvider";
+import { FormDataContext } from "../context/FormDataContextProvider";
 
-export const FormEngine = ({
-	formControls,
-	sectionName,
-	formData,
-	setFormData,
-}) => {
-	const { finalFormData, setFinalFormData } = useContext(CVContext);
+export const FormEngine = ({ formControls, sectionName }) => {
+	const { setFinalFormData } = useContext(CVContext);
+	const { formData, setFormData } = useContext(FormDataContext);
 
 	const handleInputField = (field) => {
 		switch (field.componentType) {
@@ -99,7 +96,7 @@ export const FormEngine = ({
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setFinalFormData((prevData) => {
-			const sectionData = finalFormData[sectionName] || [];
+			const sectionData = prevData[sectionName] || [];
 			if (formData.id) {
 				return {
 					...prevData,
