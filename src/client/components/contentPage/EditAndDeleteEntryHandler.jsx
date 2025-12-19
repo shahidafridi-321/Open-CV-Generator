@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { CVContext } from "../../context/CVContextProvider";
 import { FormDataContext } from "../../context/FormDataContextProvider";
+import { BiEditAlt } from "react-icons/bi";
+import { MdDeleteForever } from "react-icons/md";
 
 export const EditAndDelete = ({ entry, sectionName }) => {
 	const { finalFormData, setFinalFormData } = useContext(CVContext);
@@ -25,15 +27,22 @@ export const EditAndDelete = ({ entry, sectionName }) => {
 		>
 			<button
 				onClick={() => setFormData(entry)}
-				className="px-4 py-2 bg-gray-300 rounded"
+				className=" bg-gray-300 rounded font-bold"
 			>
-				{entry.degree || "Edit Entry"}
+				{/*  */}
+				<div className="flex gap-2 justify-center items-center px-4 py-2">
+					<BiEditAlt className=" text-gray-800 text-2xl"></BiEditAlt>
+					{entry.degree || "Edit Entry"}
+				</div>
 			</button>
 			<button
 				onClick={() => handleDelete()}
-				className="px-4 py-2 bg-red-400 rounded"
+				className=" bg-gray-300 rounded font-bold"
 			>
-				Delete
+				<div className="flex gap-2 justify-center items-center px-4 py-2">
+					<MdDeleteForever className="text-red-500 text-2xl"></MdDeleteForever>{" "}
+					Delete
+				</div>
 			</button>
 		</div>
 	);
