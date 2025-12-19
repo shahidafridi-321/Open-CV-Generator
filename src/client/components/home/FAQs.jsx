@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { faqs } from "../../../utils/FAQsData";
+import { LuArrowDownNarrowWide, LuArrowUpNarrowWide } from "react-icons/lu";
 
 export const FAQs = () => {
 	const [newFaqs, setNewFaqs] = useState(faqs);
@@ -36,7 +37,11 @@ export const FAQs = () => {
 									onClick={() => handleShowDetails(faq.id)}
 									className="font-extrabold"
 								>
-									{faq.showDetails ? "X" : "+"}
+									{faq.showDetails ? (
+										<LuArrowUpNarrowWide className="text-xl"></LuArrowUpNarrowWide>
+									) : (
+										<LuArrowDownNarrowWide className="text-xl"></LuArrowDownNarrowWide>
+									)}
 								</button>
 							</div>
 						</div>
