@@ -43,7 +43,7 @@ export const routes = createBrowserRouter([
 				element: (
 					<CVContextProvider>
 						<FormDataContextProvider>
-							<ResumeContentPage />;
+							<ResumeContentPage />
 						</FormDataContextProvider>
 					</CVContextProvider>
 				),
