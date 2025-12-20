@@ -3,10 +3,10 @@ import { CVContext } from "../context/CVContextProvider";
 
 import { PopUp } from "../components/contentPage/PopUp";
 import { SectionFormRenderer } from "../components/contentPage/SectionFormRenderer";
+import { TemplateRenderer } from "../templateEngine/TemplateRenderer";
+import { twoColumnsSidebar } from "../../utils/config";
 
 export const ResumeContentPage = () => {
-	const { finalFormData } = useContext(CVContext);
-
 	const [selectedSections, setSelectedSections] = useState([
 		{ key: "personalInformation", label: "Personal Information" },
 	]);
@@ -14,7 +14,7 @@ export const ResumeContentPage = () => {
 	const [opensection, setOpensection] = useState(null);
 
 	return (
-		<main className="w-full min-h-screen p-4 grid grid-cols-5">
+		<main className="w-full min-h-screen p-4 grid grid-cols-5 gap-5">
 			{/* Sidebar */}
 			{!showPopup ? (
 				<>
@@ -54,11 +54,7 @@ export const ResumeContentPage = () => {
 
 					{/* Main Content */}
 					<div className="col-span-5 md:col-span-3 flex flex-col ">
-						<div className="flex flex-col py-4 px-6 gap-3">
-							<h1 className="text-4xl font-bold">Resume Content</h1>
-							{/* Form content goes here */}
-							{JSON.stringify(finalFormData)}
-						</div>
+						<TemplateRenderer template={twoColumnsSidebar} />
 					</div>
 				</>
 			) : (
