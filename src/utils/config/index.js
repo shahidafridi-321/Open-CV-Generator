@@ -259,3 +259,27 @@ export const sections = [
 	{ key: "awards", label: "Awards" },
 	{ key: "references", label: "References" },
 ];
+
+export const twoColumnsSidebar = {
+	id: "twoColumnsSidebar",
+	name: "Two column Sidebar",
+	layout: "twoColumn",
+	header: { key: "personalInformation", label: "Personal Information" },
+	leftSide: [
+		{ key: "profile", label: "Profile" },
+		{ key: "languages", label: "Languages" },
+		{ key: "awards", label: "Awards" },
+	],
+	rightside: [
+		{ key: "professionalExperience", label: "Professional Experience" },
+		{ key: "education", label: "Education" },
+		{ key: "skills", label: "Skills" },
+	],
+	styles: {
+		leftSideBg: "bg-[#1b3142]",
+		rightSideBg: "bg-white",
+		leftSideFont: "Roman",
+		padding: "py-16 px-12",
+		rightSideFont: "font-sans text-black",
+	},
+};
