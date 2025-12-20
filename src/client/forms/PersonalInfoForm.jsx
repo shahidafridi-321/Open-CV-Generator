@@ -109,7 +109,7 @@ export const PersonalInfoForm = () => {
 							e.preventDefault();
 							setFinalFormData((prevData) => ({
 								...prevData,
-								personalInfo: {
+								personalInformation: {
 									...formData,
 								},
 							}));
