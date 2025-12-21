@@ -75,28 +75,3 @@ export const TemplateRenderer = ({ template }) => {
 	}
 	return null;
 };
-
-{
-	/* <div className="w-full">
-						<div className="w-full bg-[#283e4d] flex items-center justify-center">
-							<h3 className=" text-white text-[13px] font-bold mb-2">
-								{template.leftSide[0].label}
-							</h3>
-						</div>
-						<p className="text-white text-[10px] ">
-							{defaultData[template.leftSide[0].key][0].description}
-						</p>
-					</div>
-					<div className="w-full">
-						<div className="w-full bg-[#283e4d] flex items-center justify-center">
-							<h3 className=" text-white text-[13px] font-bold mb-2">
-								{template.leftSide[1].label}
-							</h3>
-						</div>
-						{defaultData[template.leftSide[1].key].map((section) => (
-							<p key={section} className="text-white text-[10px]">
-								{section.language}
-							</p>
-						))}
-					</div> */
-}
