@@ -3,6 +3,7 @@ import { defaultData } from "../../utils/resumePopulatingData";
 import { MdEmail } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
 import { sectionRendererMap } from "./sectionRenderers";
+import { BiPhoneCall } from "react-icons/bi";
 
 export const TemplateRenderer = ({ template }) => {
 	if (!template) {
