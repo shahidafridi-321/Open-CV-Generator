@@ -4,7 +4,7 @@ import { CVContext } from "../context/CVContextProvider";
 import { PopUp } from "../components/contentPage/PopUp";
 import { SectionFormRenderer } from "../components/contentPage/SectionFormRenderer";
 import { TemplateRenderer } from "../templateEngine/TemplateRenderer";
-import { twoColumnsSidebar } from "../../utils/config";
+import { twoColumnsSidebar } from "../../utils/templates/twoColumnsSidebar";
 
 export const ResumeContentPage = () => {
 	const [selectedSections, setSelectedSections] = useState([
