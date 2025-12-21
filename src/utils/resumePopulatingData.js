@@ -16,7 +16,8 @@ export const defaultData = {
 	},
 	profile: [
 		{
-			description: "i am a dev hah hghagd hjgaDNB AGD sjdh hjjahjhsjhjshhjs ",
+			description:
+				"i am a dev hah hghagd hjgaDNB AGD sjdh hjjahjhsjhjshhjs i am a dev hah hghagd hjgaDNB AGD sjdh hjjahjhsjhjshhjs i am a dev hah hghagd hjgaDNB AGD sjdh hjjahjhsjhjshhjs i am a dev hah hghagd hjgaDNB AGD sjdh hjjahjhsjhjshhjs ",
 		},
 	],
 	education: [
