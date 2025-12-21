@@ -30,7 +30,7 @@ export const defaultData = {
 			description: null,
 		},
 	],
-	professionalProfile: [
+	professionalExperience: [
 		{
 			jobTitle: "data entry clerk",
 			employer: "al rahman",
@@ -50,10 +50,12 @@ export const defaultData = {
 		{
 			language: "pashto",
 			languageLevel: "entry",
+			level: 4,
 		},
 		{
 			language: "urdu",
 			languageLevel: "entry",
+			level: 3,
 		},
 	],
 	certificates: [
@@ -76,8 +78,16 @@ export const defaultData = {
 		{
 			award: "prime minister",
 			issuer: "Goverment",
-			startDate: "01/01/2019",
-			endDate: "01/02/2021",
+			startDate: "2019",
+			endDate: "2021",
+			location: "peshawar,pakistan",
+			description: null,
+		},
+		{
+			award: "prime minister",
+			issuer: "Goverment",
+			startDate: "2019",
+			endDate: "2021",
 			location: "peshawar,pakistan",
 			description: null,
 		},
