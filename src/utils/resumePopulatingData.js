@@ -27,20 +27,48 @@ export const defaultData = {
 			startDate: "01/01/2019",
 			endDate: "01/02/2021",
 			location: "peshawar,pakistan",
-			description: null,
+			description:
+				"this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,",
+		},
+		{
+			degree: "Bs computer science",
+			school: "islamia college peshawar",
+			startDate: "01/01/2019",
+			endDate: "01/02/2021",
+			location: "peshawar,pakistan",
+			description:
+				"this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,",
 		},
 	],
 	professionalExperience: [
 		{
 			jobTitle: "data entry clerk",
-			employer: "al rahman",
+			employer: "Al rahman medical center",
 			startDate: "01/01/2019",
 			endDate: "01/02/2021",
 			location: "peshawar,pakistan",
-			description: null,
+			description:
+				"this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,",
+		},
+		{
+			jobTitle: "data entry clerk",
+			employer: "Al rahman medical center",
+			startDate: "01/01/2019",
+			endDate: "01/02/2021",
+			location: "peshawar,pakistan",
+			description:
+				"this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,this is what we want and i am professional and this is ,",
 		},
 	],
 	skills: [
+		{
+			skil: "Web dev",
+			skilLevel: "intermedaite",
+		},
+		{
+			skil: "Web dev",
+			skilLevel: "intermedaite",
+		},
 		{
 			skil: "Web dev",
 			skilLevel: "intermedaite",
