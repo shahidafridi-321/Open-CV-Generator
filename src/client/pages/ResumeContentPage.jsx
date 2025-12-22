@@ -54,7 +54,7 @@ export const ResumeContentPage = () => {
 
 					{/* Main Content */}
 					<div className="col-span-5 md:col-span-3 flex flex-col ">
-						<TemplateRenderer template={twoColumnsSidebar} />
+						<TemplateRenderer template={twoColumnsSidebar} mode="editor" />
 					</div>
 				</>
 			) : (
