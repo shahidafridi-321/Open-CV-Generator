@@ -4,5 +4,9 @@ export const FormDataContextProvider = ({ children }) => {
 	const [formData, setFormData] = useState({});
 
 	const value = useMemo(() => ({ formData, setFormData }), [formData]);
-	return <FormDataContext value={value}>{children}</FormDataContext>;
+	return (
+		<FormDataContext.Provider value={value}>
+			{children}
+		</FormDataContext.Provider>
+	);
 };
