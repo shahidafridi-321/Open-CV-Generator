@@ -3,7 +3,7 @@ import { CVContext } from "../context/CVContextProvider";
 import { FormDataContext } from "../context/FormDataContextProvider";
 
 export const FormEngine = ({ formControls, sectionName }) => {
-	const { setFinalFormData } = useContext(CVContext);
+	const { finalFormData, setFinalFormData } = useContext(CVContext);
 	const { formData, setFormData } = useContext(FormDataContext);
 
 	const handleInputField = (field) => {
