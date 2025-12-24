@@ -2,12 +2,9 @@ import React, { useContext } from "react";
 import { CVContext } from "../../context/CVContextProvider";
 import { sections } from "../../../utils/config";
 
-export const PopUp = ({
-	selectedSections,
-	setSelectedSections,
-	setShowPopup,
-}) => {
-	const { setFinalFormData } = useContext(CVContext);
+export const PopUp = ({ setShowPopup }) => {
+	const { setFinalFormData, selectedSections, setSelectedSections } =
+		useContext(CVContext);
 	return (
 		<div className="w-full bg-gray-200  rounded-xl flex  flex-col gap-3 col-span-5 shadow-2xl p-10 ">
 			<div className="w-full flex flex-col space-y-3 md:flex-row justify-between md:items-center px-6 py-4">
