@@ -28,8 +28,17 @@ export const ListSection = ({ title, data, field }) => {
 						<div key={i}>
 							<h4 className="text-white text-[13px] font-bold">{item.award}</h4>
 							<p className="text-white text-[11px]">
-								{item.issuer} • {item.startDate} - {item.endDate}
+								{item.issuer} • {item.date}
 							</p>
+						</div>
+					))}
+				</div>
+			)}
+			{field === "reference" && (
+				<div className="space-y-2">
+					{data.map((item, i) => (
+						<div key={i}>
+							<h4 className="text-white text-[13px] font-bold">{item.name}</h4>
 						</div>
 					))}
 				</div>
