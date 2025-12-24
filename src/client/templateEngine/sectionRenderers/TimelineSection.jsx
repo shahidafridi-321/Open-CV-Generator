@@ -10,10 +10,10 @@ export const TimelineSection = ({ title, data }) => {
 			{data.map((item, i) => (
 				<div key={i} className="space-y-1">
 					<h4 className="text-[#131313] text-[15px] font-extrabold">
-						{item.jobTitle || item.degree}
+						{item.jobTitle || item.degree || item.projectTitle}
 					</h4>
 					<h5 className="text-[#636363] text-[14px] font-semibold">
-						{item.employer || item.school}
+						{item.employer || item.school || item.subTitle}
 					</h5>
 					<p className="text-[#636363] text-[12px]">
 						{item.startDate} - {item.endDate}
