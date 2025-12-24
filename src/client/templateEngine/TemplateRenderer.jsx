@@ -44,7 +44,7 @@ export const TemplateRenderer = ({ template, data }) => {
 							</p>
 							<div className="w-20 h-20 rounded-full flex items-center justify-center  transition">
 								<img
-									src={finalFormData?.personalInformation?.profilePhoto || ""}
+									src={finalFormData?.personalInformation?.profilePhoto || null}
 									alt=""
 									className="w-full h-full object-center rounded-full "
 								/>
@@ -59,17 +59,13 @@ export const TemplateRenderer = ({ template, data }) => {
 								<div className="flex items-center space-x-2">
 									<BiPhoneCall className="text-white text-[10px]"></BiPhoneCall>
 									<p className="text-white text-[10px]">
-										<p>
-											{finalFormData?.[template.header.section]?.phone || ""}
-										</p>
+										{finalFormData?.[template.header.section]?.phone || ""}
 									</p>
 								</div>
 								<div className="flex items-center space-x-2">
 									<GoLocation className="text-white text-[10px]"></GoLocation>
 									<p className="text-white text-[10px]">
-										<p>
-											{finalFormData?.[template.header.section]?.location || ""}
-										</p>
+										{finalFormData?.[template.header.section]?.location || ""}
 									</p>
 								</div>
 							</div>
