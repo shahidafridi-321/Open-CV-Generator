@@ -6,15 +6,26 @@ export const CVContext = createContext({
 	setFinalFormData: () => {},
 	allCvs: [],
 	setAllCvs: () => {},
+	selectedSections: [],
+	setSelectedSections: () => {},
 });
 
 export const CVContextProvider = ({ children }) => {
 	const [finalFormData, setFinalFormData] = useState({});
 	const [allCvs, setAllCvs] = useState(CV);
-
+	const [selectedSections, setSelectedSections] = useState([
+		{ key: "personalInformation", label: "Personal Information" },
+	]);
 	const value = useMemo(
-		() => ({ finalFormData, setFinalFormData, allCvs, setAllCvs }),
-		[finalFormData, allCvs]
+		() => ({
+			finalFormData,
+			setFinalFormData,
+			allCvs,
+			setAllCvs,
+			selectedSections,
+			setSelectedSections,
+		}),
+		[finalFormData, allCvs, selectedSections]
 	);
 
 	return <CVContext.Provider value={value}>{children}</CVContext.Provider>;
