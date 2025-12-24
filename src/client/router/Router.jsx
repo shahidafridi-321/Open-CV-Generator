@@ -28,7 +28,13 @@ export const routes = createBrowserRouter([
 			},
 			{
 				path: "/resumes",
-				element: <ResumesPage />,
+				element: (
+					<CVContextProvider>
+						<FormDataContextProvider>
+							<ResumesPage />,
+						</FormDataContextProvider>
+					</CVContextProvider>
+				),
 			},
 			{
 				path: "/cover-letters",
