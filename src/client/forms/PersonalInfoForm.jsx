@@ -1,12 +1,13 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
 import {
 	initalPersonalFormData,
 	personalFormControls,
-} from "../../utils/personalFormControls";
+} from "../../utils/config/personalFormControls";
 import { CVContext } from "../context/CVContextProvider";
+import { FormDataContext } from "../context/FormDataContextProvider";
 
 export const PersonalInfoForm = () => {
-	const [formData, setFormData] = useState(initalPersonalFormData);
+	const { formData, setFormData } = useContext(FormDataContext);
 	const { setFinalFormData } = useContext(CVContext);
 	const fileInputRef = useRef(null);
 
@@ -61,7 +62,7 @@ export const PersonalInfoForm = () => {
 
 						<div
 							onClick={handleDivClick}
-							className="w-[160px] h-[160px] rounded-full bg-gray-200 flex items-center justify-center cursor-pointer hover:bg-gray-300 transition"
+							className="w-40 h-40 rounded-full bg-gray-200 flex items-center justify-center cursor-pointer hover:bg-gray-300 transition"
 						>
 							{formData.profilePhoto ? (
 								<img
@@ -107,12 +108,15 @@ export const PersonalInfoForm = () => {
 					<button
 						onClick={(e) => {
 							e.preventDefault();
+
 							setFinalFormData((prevData) => ({
 								...prevData,
 								personalInformation: {
 									...formData,
+									id: crypto.randomUUID(),
 								},
 							}));
+
 							setFormData(initalPersonalFormData);
 						}}
 						className="w-[50%] py-4 bg-green-400 hover:bg-green-500 rounded-xl text-violet-100 font-bold"
