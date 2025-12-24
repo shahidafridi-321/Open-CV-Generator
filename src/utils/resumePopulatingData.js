@@ -1,6 +1,6 @@
 export const defaultData = {
 	personalInformation: {
-		profilePhoto: "",
+		profilePhoto: "../../public/images/8.webp",
 		fullName: "Shahid Afridi",
 		professionalTitle: "Full Stack web dev",
 		email: "shahidafridisa321@gmail.com",
@@ -16,7 +16,7 @@ export const defaultData = {
 	},
 	profile: [
 		{
-			description:
+			profile:
 				"i am a dev hah hghagd hjgaDNB AGD sjdh hjjahjhsjhjshhjs i am a dev hah hghagd hjgaDNB AGD sjdh hjjahjhsjhjshhjs i am a dev hah hghagd hjgaDNB AGD sjdh hjjahjhsjhjshhjs i am a dev hah hghagd hjgaDNB AGD sjdh hjjahjhsjhjshhjs ",
 		},
 	],
