@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CVContext } from "../context/CVContextProvider";
 
 import { PopUp } from "../components/contentPage/PopUp";
@@ -13,6 +13,7 @@ export const ResumeContentPage = () => {
 	]);
 	const [showPopup, setShowPopup] = useState(false);
 	const [opensection, setOpensection] = useState(null);
+	const { finalFormData, allCvs, setAllCvs } = useContext(CVContext);
 
 	return (
 		<main className="w-full min-h-screen p-4 grid grid-cols-5 gap-5">
@@ -50,6 +51,16 @@ export const ResumeContentPage = () => {
 							className="bg-pink-500 hover:bg-pink-600 w-40 py-2 px-6 rounded text-gray-100 font-bold transition-all"
 						>
 							Add Section
+						</button>
+						<button
+							onClick={() => {
+								if (!allCvs.includes(finalFormData)) {
+									setAllCvs((prevData) => [...prevData, finalFormData]);
+								}
+							}}
+							className="bg-pink-500 hover:bg-pink-600 w-40 py-2 px-6 rounded text-gray-100 font-bold transition-all"
+						>
+							All Done
 						</button>
 					</div>
 
