@@ -8,12 +8,10 @@ import { twoColumnsSidebar } from "../../utils/templates/twoColumnsSidebar";
 import { PreviewShell } from "../templateEngine/PreviewShell";
 
 export const ResumeContentPage = () => {
-	const [selectedSections, setSelectedSections] = useState([
-		{ key: "personalInformation", label: "Personal Information" },
-	]);
 	const [showPopup, setShowPopup] = useState(false);
 	const [opensection, setOpensection] = useState(null);
-	const { finalFormData, allCvs, setAllCvs } = useContext(CVContext);
+	const { finalFormData, allCvs, setAllCvs, selectedSections } =
+		useContext(CVContext);
 
 	return (
 		<main className="w-full min-h-screen p-4 grid grid-cols-5 gap-5">
@@ -72,11 +70,7 @@ export const ResumeContentPage = () => {
 					</div>
 				</>
 			) : (
-				<PopUp
-					setShowPopup={setShowPopup}
-					selectedSections={selectedSections}
-					setSelectedSections={setSelectedSections}
-				/>
+				<PopUp setShowPopup={setShowPopup} />
 			)}
 		</main>
 	);
