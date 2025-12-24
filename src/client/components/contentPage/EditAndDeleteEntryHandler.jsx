@@ -9,36 +9,43 @@ export const EditAndDelete = ({ entry, sectionName }) => {
 	const { setFormData } = useContext(FormDataContext);
 
 	const handleDelete = () => {
-		const sectionData = finalFormData[sectionName].filter(
+		if (sectionName === "personalInformation") {
+			setFormData({});
+			setFinalFormData((prevData) => ({
+				...prevData,
+				personalInformation: {},
+			}));
+			return;
+		}
+
+		const updatedSection = finalFormData[sectionName].filter(
 			(item) => item.id !== entry.id
 		);
 
 		setFinalFormData((prevData) => {
 			return {
 				...prevData,
-				[sectionName]: [...sectionData],
+				[sectionName]: [...updatedSection],
 			};
 		});
 	};
+
+	const handleEdit = () => {
+		if (sectionName === "personalInformation") {
+			setFormData(finalFormData.personalInformation || {});
+			return;
+		}
+		setFormData(entry);
+	};
 	return (
-		<div
-			className="w-full justify-between mt-4 flex gap-2 flex-wrap"
-			key={entry.id}
-		>
-			<button
-				onClick={() => setFormData(entry)}
-				className=" bg-gray-300 rounded font-bold"
-			>
-				{/*  */}
+		<div className="w-full justify-between mt-4 flex gap-2 flex-wrap">
+			<button onClick={handleEdit} className=" bg-gray-300 rounded font-bold">
 				<div className="flex gap-2 justify-center items-center px-4 py-2">
 					<BiEditAlt className=" text-gray-800 text-2xl"></BiEditAlt>
-					{entry.degree || "Edit Entry"}
+					{entry?.degree || "Edit Entry"}
 				</div>
 			</button>
-			<button
-				onClick={() => handleDelete()}
-				className=" bg-gray-300 rounded font-bold"
-			>
+			<button onClick={handleDelete} className=" bg-gray-300 rounded font-bold">
 				<div className="flex gap-2 justify-center items-center px-4 py-2">
 					<MdDeleteForever className="text-red-500 text-2xl"></MdDeleteForever>{" "}
 					Delete
