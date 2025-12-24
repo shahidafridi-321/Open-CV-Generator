@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { CVContext } from "../context/CVContextProvider";
 
 import { PopUp } from "../components/contentPage/PopUp";
 import { SectionFormRenderer } from "../components/contentPage/SectionFormRenderer";
 import { TemplateRenderer } from "../templateEngine/TemplateRenderer";
 import { twoColumnsSidebar } from "../../utils/templates/twoColumnsSidebar";
+import { PreviewShell } from "../templateEngine/PreviewShell";
 
 export const ResumeContentPage = () => {
 	const [selectedSections, setSelectedSections] = useState([
@@ -54,7 +55,9 @@ export const ResumeContentPage = () => {
 
 					{/* Main Content */}
 					<div className="col-span-5 md:col-span-3 flex flex-col ">
-						<TemplateRenderer template={twoColumnsSidebar} mode="editor" />
+						<PreviewShell>
+							{<TemplateRenderer template={twoColumnsSidebar} />}
+						</PreviewShell>
 					</div>
 				</>
 			) : (
