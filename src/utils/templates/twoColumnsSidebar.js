@@ -21,6 +21,12 @@ export const twoColumnsSidebar = {
 				field: "language",
 			},
 			{ section: "awards", type: "list", label: "Awards", field: "award" },
+			{
+				section: "references",
+				type: "list",
+				label: "References",
+				field: "reference",
+			},
 		],
 		right: [
 			{
@@ -33,7 +39,12 @@ export const twoColumnsSidebar = {
 				type: "timeline",
 				label: "Education",
 			},
-			{ section: "skills", type: "tags", label: "Skills", field: "skil" },
+			{
+				section: "projects",
+				type: "timeline",
+				label: "Projects",
+			},
+			{ section: "skills", type: "tags", label: "Skills", field: "skill" },
 		],
 	},
 	styles: {
