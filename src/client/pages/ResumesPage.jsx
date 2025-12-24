@@ -7,7 +7,8 @@ import { CVContext } from "../context/CVContextProvider";
 
 export const ResumesPage = () => {
 	const navigate = useNavigate();
-	const { setFinalFormData, allCvs } = useContext(CVContext);
+	const { setFinalFormData, allCvs, setSelectedSections } =
+		useContext(CVContext);
 
 	return (
 		<main className="w-full min-h-screen grid grid-cols-1 md:grid-cols-4 bg-gray-50">
@@ -47,7 +48,13 @@ export const ResumesPage = () => {
 					{/* Resume Grid */}
 					<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
 						<div
-							onClick={() => navigate("/resume/content")}
+							onClick={() => {
+								setFinalFormData({});
+								setSelectedSections([
+									{ key: "personalInformation", label: "Personal Information" },
+								]);
+								navigate("/resume/content");
+							}}
 							className="h-[300px] flex flex-col justify-center items-center border-2 border-dashed border-gray-400 rounded-xl cursor-pointer hover:bg-gray-100 transition"
 						>
 							<span className="text-5xl text-gray-400">+</span>
@@ -62,6 +69,20 @@ export const ResumesPage = () => {
 									key={i}
 									onClick={() => {
 										setFinalFormData(item);
+										const sectionsFromResume = Object.keys(item).map((key) => {
+											if (key === "personalInformation") {
+												return { key, label: "Personal Information" };
+											}
+											if (key === "professionalExperience") {
+												return { key, label: "Professional Experience" };
+											}
+											return {
+												key,
+												label: key.charAt(0).toUpperCase() + key.slice(1),
+											};
+										});
+										setSelectedSections(sectionsFromResume);
+
 										navigate("/resume/content");
 									}}
 									className="h-[300px] rounded-2xl shadow hover:shadow-lg transition cursor-pointer bg-white "
