@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { PreviewShell } from "../templateEngine/PreviewShell";
 import { TemplateRenderer } from "../templateEngine/TemplateRenderer";
 import { twoColumnsSidebar } from "../../utils/templates/twoColumnsSidebar";
-import { defaultData } from "../../utils/resumePopulatingData";
-
-const resumes = [1];
+import { CVContext } from "../context/CVContextProvider";
 
 export const ResumesPage = () => {
 	const navigate = useNavigate();
+	const { setFinalFormData, allCvs } = useContext(CVContext);
 
 	return (
 		<main className="w-full min-h-screen grid grid-cols-1 md:grid-cols-4 bg-gray-50">
@@ -48,7 +47,7 @@ export const ResumesPage = () => {
 					{/* Resume Grid */}
 					<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
 						<div
-							onClick={() => navigate("/resume")}
+							onClick={() => navigate("/resume/content")}
 							className="h-[300px] flex flex-col justify-center items-center border-2 border-dashed border-gray-400 rounded-xl cursor-pointer hover:bg-gray-100 transition"
 						>
 							<span className="text-5xl text-gray-400">+</span>
@@ -57,20 +56,24 @@ export const ResumesPage = () => {
 							</p>
 						</div>
 
-						{resumes.map((item) => (
-							<div
-								key={item}
-								onClick={() => navigate("/resume/content")}
-								className="h-[300px] rounded-2xl shadow hover:shadow-lg transition cursor-pointer bg-white "
-							>
-								<PreviewShell>
-									<TemplateRenderer
-										template={twoColumnsSidebar}
-										data={defaultData}
-									/>
-								</PreviewShell>
-							</div>
-						))}
+						{Array.isArray(allCvs) &&
+							allCvs.map((item, i) => (
+								<div
+									key={i}
+									onClick={() => {
+										setFinalFormData(item);
+										navigate("/resume/content");
+									}}
+									className="h-[300px] rounded-2xl shadow hover:shadow-lg transition cursor-pointer bg-white "
+								>
+									<PreviewShell>
+										<TemplateRenderer
+											template={twoColumnsSidebar}
+											data={item}
+										/>
+									</PreviewShell>
+								</div>
+							))}
 					</div>
 				</div>
 			</section>
