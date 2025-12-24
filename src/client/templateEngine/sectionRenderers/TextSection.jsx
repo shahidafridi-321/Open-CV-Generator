@@ -11,7 +11,7 @@ export const TextSection = ({ data, title }) => {
 			</div>
 			{data.map((item, i) => (
 				<p className="w-full text-white text-[13px] leading-relaxed" key={i}>
-					{item.description}
+					{item.profile}
 				</p>
 			))}
 		</section>
