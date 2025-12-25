@@ -6,8 +6,6 @@ import { ResumesPage } from "../pages/ResumesPage";
 import { CoverLetter } from "../pages/CoverLetter";
 import { ResumePage } from "../pages/ResumePage";
 import { ResumeContentPage } from "../pages/ResumeContentPage";
-import { CVContextProvider } from "../context/CVContextProvider";
-import { FormDataContextProvider } from "../context/FormDataContextProvider";
 import { ResumePreviewPage } from "../pages/ResumePreviewPage";
 
 export const routes = createBrowserRouter([
@@ -29,13 +27,7 @@ export const routes = createBrowserRouter([
 			},
 			{
 				path: "/resumes",
-				element: (
-					<CVContextProvider>
-						<FormDataContextProvider>
-							<ResumesPage />,
-						</FormDataContextProvider>
-					</CVContextProvider>
-				),
+				element: <ResumesPage />,
 			},
 
 			{
@@ -48,24 +40,12 @@ export const routes = createBrowserRouter([
 			},
 			{
 				path: "/resume/content",
-				element: (
-					<CVContextProvider>
-						<FormDataContextProvider>
-							<ResumeContentPage />
-						</FormDataContextProvider>
-					</CVContextProvider>
-				),
+				element: <ResumeContentPage />,
 			},
 		],
 	},
 	{
 		path: "/resume-preview",
-		element: (
-			<CVContextProvider>
-				<FormDataContextProvider>
-					<ResumePreviewPage />
-				</FormDataContextProvider>
-			</CVContextProvider>
-		),
+		element: <ResumePreviewPage />,
 	},
 ]);
