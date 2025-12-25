@@ -1,5 +1,6 @@
 export let allCvs = [
 	{
+		id: 1,
 		personalInformation: {
 			profilePhoto: "/home/shahid-afridi/Downloads/profile.jpg",
 			fullName: "Shahid Afridi",
