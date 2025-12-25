@@ -49,7 +49,9 @@ export const ResumesPage = () => {
 					<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
 						<div
 							onClick={() => {
-								setFinalFormData({});
+								setFinalFormData({
+									id: crypto.randomUUID(),
+								});
 								setSelectedSections([
 									{ key: "personalInformation", label: "Personal Information" },
 								]);
@@ -85,7 +87,7 @@ export const ResumesPage = () => {
 
 										navigate("/resume/content");
 									}}
-									className="h-[300px] rounded-2xl shadow hover:shadow-lg transition cursor-pointer bg-white "
+									className="h-[300px] rounded-2xl shadow hover:shadow-lg transition cursor-pointer bg-white relative"
 								>
 									<PreviewShell>
 										<TemplateRenderer
@@ -93,6 +95,15 @@ export const ResumesPage = () => {
 											data={item}
 										/>
 									</PreviewShell>
+									<button
+										className="w-20 bg-gray-300 py-2 px-2 rounded-xl font-bold absolute top-1 right-1 cursor-pointer"
+										onClick={(e) => {
+											e.stopPropagation();
+											navigate("/resume-preview", { state: item });
+										}}
+									>
+										Preview
+									</button>
 								</div>
 							))}
 					</div>
