@@ -66,9 +66,9 @@ export const ResumesPage = () => {
 						</div>
 
 						{Array.isArray(allCvs) &&
-							allCvs.map((item, i) => (
+							allCvs.map((item) => (
 								<div
-									key={i}
+									key={item.id}
 									onClick={() => {
 										setFinalFormData(item);
 										const sectionsFromResume = Object.keys(item).map((key) => {
@@ -99,7 +99,7 @@ export const ResumesPage = () => {
 										className="w-20 bg-gray-300 py-2 px-2 rounded-xl font-bold absolute top-1 right-1 cursor-pointer"
 										onClick={(e) => {
 											e.stopPropagation();
-											navigate("/resume-preview", { state: item });
+											navigate("/resume-preview");
 										}}
 									>
 										Preview
