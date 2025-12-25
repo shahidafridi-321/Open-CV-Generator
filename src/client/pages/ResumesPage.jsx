@@ -4,6 +4,7 @@ import { PreviewShell } from "../templateEngine/PreviewShell";
 import { TemplateRenderer } from "../templateEngine/TemplateRenderer";
 import { twoColumnsSidebar } from "../../utils/templates/twoColumnsSidebar";
 import { CVContext } from "../context/CVContextProvider";
+import { SECTION_LABELS } from "../../utils/config/sectionLabels";
 
 export const ResumesPage = () => {
 	const navigate = useNavigate();
@@ -71,18 +72,14 @@ export const ResumesPage = () => {
 									key={item.id}
 									onClick={() => {
 										setFinalFormData(item);
-										const sectionsFromResume = Object.keys(item).map((key) => {
-											if (key === "personalInformation") {
-												return { key, label: "Personal Information" };
-											}
-											if (key === "professionalExperience") {
-												return { key, label: "Professional Experience" };
-											}
-											return {
+										const sectionsFromResume = Object.keys(item)
+											.filter((key) => key !== "id")
+											.map((key) => ({
 												key,
-												label: key.charAt(0).toUpperCase() + key.slice(1),
-											};
-										});
+												label:
+													SECTION_LABELS[key] ||
+													key.replace(/([A-Z])/g, " $1").trim(),
+											}));
 										setSelectedSections(sectionsFromResume);
 
 										navigate("/resume/content");
