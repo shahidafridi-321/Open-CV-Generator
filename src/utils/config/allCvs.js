@@ -27,6 +27,26 @@ export let allCvs = [
 					"Managed 50+ daily customer and stock records with 100% accuracy using MS Office,\nensuring data integrity for high-volume workflows.\nDeveloped automated scripts, boosting efficiency by 20%, a skill transferable to API data\nhandling and low-code platform development.",
 				id: "4f654758-9627-4995-acd4-005d3afdea10",
 			},
+			{
+				jobTitle: "Data Entry Clerk",
+				employer: "Al Rahman Medical Center",
+				startDate: "2025-12-15",
+				endDate: "2025-10-15",
+				location: "Peshawar, Pakistsan",
+				description:
+					"Managed 50+ daily customer and stock records with 100% accuracy using MS Office,\nensuring data integrity for high-volume workflows.\nDeveloped automated scripts, boosting efficiency by 20%, a skill transferable to API data\nhandling and low-code platform development.",
+				id: "4f654758-9627-4995-acd4-005d3afdea10",
+			},
+			{
+				jobTitle: "Data Entry Clerk",
+				employer: "Al Rahman Medical Center",
+				startDate: "2025-12-15",
+				endDate: "2025-10-15",
+				location: "Peshawar, Pakistsan",
+				description:
+					"Managed 50+ daily customer and stock records with 100% accuracy using MS Office,\nensuring data integrity for high-volume workflows.\nDeveloped automated scripts, boosting efficiency by 20%, a skill transferable to API data\nhandling and low-code platform development.",
+				id: "4f654758-9627-4995-acd4-005d3afdea10",
+			},
 		],
 		education: [
 			{
