@@ -30,7 +30,7 @@ export const TemplateRenderer = ({ template, data }) => {
 				className="bg-white shadow"
 				style={{
 					width: BASE_WIDTH,
-					height: BASE_HEIGHT,
+					minHeight: BASE_HEIGHT,
 				}}
 			>
 				<div className="w-full h-full grid grid-cols-5 items-start">
